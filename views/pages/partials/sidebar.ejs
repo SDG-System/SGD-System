@@ -1,0 +1,69 @@
+<div class="sidebar">
+  <div class="menu-toggle text-center" onclick="toggleMenu()">
+    <i id="toggle-icon" class="bi bi-list"></i>
+  </div>
+  <section class="menu">
+    <div class="menu-botao logo text-center mt-3">
+      <img src="imagens/Logotipo.png" />
+    </div>
+    <div>
+      <ul class="menu-lateral nav nav-sidebar first-nav-bar text-center">
+        <li class="item-menu">
+          <a href="/principal"><i class="bi bi-house"></i><span class="menu-text">Home</span></a>
+        </li>
+      </ul>
+
+      <!-- Menu Produtos with Submenus -->
+      <ul class="menu-lateral nav nav-sidebar first-nav-bar">
+        <li class="nav-item dropdown item-menu">
+          <a class="nav-link dropdown-toggle" href="#" id="produtosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="bi bi-box-seam"></i><span class="menu-text">Produtos</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="produtosDropdown">
+            <a class="dropdown-item" href="/cadastrar-produtos"><i class="bi bi-plus-circle"></i><span class="menu-text">Cadastrar Produtos</span></a>
+            <a class="dropdown-item" href="/editar-produtos"><i class="bi bi-pencil"></i><span class="menu-text">Editar Produtos</span></a>
+            <a class="dropdown-item" href="/deletar-produtos"><i class="bi bi-trash"></i><span class="menu-text">Deletar Produtos</span></a>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Menu Atualização with Submenus -->
+      <ul class="menu-lateral nav nav-sidebar first-nav-bar">
+        <li class="nav-item dropdown item-menu">
+          <a class="nav-link dropdown-toggle" href="#" id="atualizacaoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="bi bi-arrow-repeat"></i><span class="menu-text">Atualização</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="atualizacaoDropdown">
+            <a class="dropdown-item" href="/atualizar-entrada"><i class="bi bi-box-arrow-in-down"></i><span class="menu-text">Entrada de Produtos</span></a>
+            <a class="dropdown-item" href="/atualizar-saida"><i class="bi bi-box-arrow-up"></i><span class="menu-text">Saída de Produtos</span></a>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Additional Items -->
+      <ul class="menu-lateral nav nav-sidebar first-nav-bar text-center">
+        <li class="item-menu">
+          <a href="/visualizar-relatorios"><i class="bi bi-bar-chart-fill"></i><span class="menu-text">Visão Geral</span></a>
+        </li>
+      </ul>
+
+      <ul class="menu-lateral nav nav-sidebar first-nav-bar text-center">
+        <li class="item-menu">
+          <a href="/listagem-produtos"><i class="bi bi-search"></i><span class="menu-text">Busca Avançada</span></a>
+        </li>
+      </ul>
+
+      <ul class="menu-lateral nav nav-sidebar first-nav-bar text-center">
+        <li class="item-menu">
+          <a href="/settings"><i class="bi bi-gear"></i><span class="menu-text">Configurações</span></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="menu-botao-logout text-center">
+    <button class="item-menu btn btn-success" id="btn-logout" onclick="logout()" title="Sair">
+      <i class="bi bi-box-arrow-right" style="font-size: 20px"></i>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Usuário</title>
+  <link rel="stylesheet" href="/css/login.css" />
+  <%- include('../partials/head') %>
+</head>
+<body>
+  <%- include ('../partials/nav') %>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card mt-5">
+          <div class="card-body">
+            <h2 class="text-center">Cadastro</h2>
+            <form method="post" action="/signup" autocomplete="off">
+              <div class="form-group">
+                <label for="username">Usuário</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Digite seu usuário"
+                  required />
+              </div>
+              <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha"
+                required />
+                <i class="bi bi-eye-slash position-absolute" id="toggleSenha" style="cursor: pointer; right: 30px;"></i>
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirme sua Senha</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua senha"
+                  required />
+                  <i class="bi bi-eye-slash position-absolute" id="toggleConfirmaSenha" style="cursor: pointer; right: 30px;"></i>
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail"
+                  required />
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                <label class="form-check-label" for="termsCheck">
+                  Concordo com os <a href="#" data-toggle="modal" data-target="#policyModal">Termos de Segurança</a>
+                </label>
+              </div>
+              <button type="submit" class="btn btn-dark btn-block">
+                Cadastrar
+              </button>
+            </form>
+            <div class="text-center mt-3">
+              <a href="/login" class="text-dark">Já tem conta ? Acesse aqui!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br /><br /><br /><br />
+
+  <footer class="rodape container-fluid text-white text-center bg-dark p-1" style="margin-top: 0%;">
+    <div>
+      <p>© 2024 Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Modal de Confirmação -->
+  <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmModalLabel">Confirmação</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Cadastro realizado com sucesso!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de erro (usuário já existe) -->
+  <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="errorModalLabel">Erro de Cadastro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="error-message">Usuário já existe.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="policyModal" tabindex="-1" aria-labelledby="policyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="policyModalLabel">Política de Segurança</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>Objetivo</h6>
+          <p>Esta Política de Segurança tem como objetivo estabelecer diretrizes claras para a proteção dos dados e
+            informações do SDG, prevenir acessos não autorizados, e garantir que todos os
+            colaboradores e parceiros sigam as melhores práticas de segurança.</p>
+  
+          <h6>2. Escopo</h6>
+          <p>Esta política aplica-se a todos os funcionários, prestadores de serviço, contratados, consultores, e qualquer
+            pessoa ou entidade que tenha acesso aos dados ou sistemas de SDG (Sistema de Gerenciamento).</p>
+  
+          <h6>3. Confidencialidade</h6>
+          <p>Todos os dados confidenciais, incluindo dados de clientes, parceiros e informações internas, devem ser
+            tratados de forma protegida, acessível apenas para pessoas autorizadas, e de acordo com a Lei Geral de
+            Proteção de Dados (LGPD) e outras regulamentações aplicáveis.</p>
+  
+          <h6>4. Controle de Acesso</h6>
+          <ul>
+            <li>O acesso aos sistemas, informações e recursos deve ser concedido apenas a indivíduos autorizados, de acordo
+              com suas responsabilidades.</li>
+            <li>Todos os acessos devem ser protegidos por senhas fortes e seguras. As senhas devem ser alteradas regularmente.</li>
+            <li>A autenticação de múltiplos fatores (MFA) deve ser utilizada sempre que possível.</li>
+          </ul>
+  
+          <h6>5. Proteção de Dados</h6>
+          <p>Todos os dados sensíveis e pessoais devem ser criptografados tanto em repouso quanto em trânsito. É proibida
+            a transferência de dados confidenciais para dispositivos não autorizados, como pen drives e dispositivos
+            pessoais. O backup dos dados deve ser realizado regularmente, armazenado de forma segura e testado periodicamente.</p>
+  
+          <h6>6. Segurança da Rede</h6>
+          <p>Todos os dispositivos conectados à rede de SDG (Sistema de Gerenciamento) devem ter proteção adequada, como
+            firewalls, antivírus e detecção de intrusões. O tráfego de rede deve ser monitorado para detectar atividades
+            suspeitas e prevenir ataques cibernéticos.</p>
+  
+          <h6>7. Atualizações e Patches</h6>
+          <p>Todos os sistemas, software e dispositivos devem ser mantidos atualizados com os patches de segurança mais
+            recentes. Vulnerabilidades descobertas devem ser corrigidas imediatamente, seguindo as melhores práticas de
+            gerenciamento de riscos.</p>
+  
+          <h6>8. Treinamento de Segurança</h6>
+          <p>Todos os colaboradores devem participar de treinamentos regulares sobre segurança da informação, incluindo
+            práticas de proteção de dados, conscientização de phishing e segurança em dispositivos móveis. Campanhas de
+            conscientização serão realizadas para garantir o engajamento de todos os envolvidos com a segurança.</p>
+  
+          <h6>9. Incidentes de Segurança</h6>
+          <p>Qualquer suspeita ou confirmação de um incidente de segurança deve ser imediatamente comunicada ao
+            departamento responsável. Um plano de resposta a incidentes será acionado em caso de violação de dados,
+            envolvendo ações de mitigação, investigação e notificação, conforme necessário.</p>
+  
+          <h6>10. Auditorias e Conformidade</h6>
+          <p>Auditorias internas e externas serão conduzidas periodicamente para verificar a aderência às políticas de
+            segurança. Todas as políticas serão revisadas anualmente, ou sempre que houver mudanças significativas nos
+            sistemas, regulamentações ou ameaças.</p>
+  
+          <h6>11. Consequências de Violação</h6>
+          <p>O descumprimento desta política poderá resultar em medidas disciplinares, que podem incluir advertências
+            formais, suspensão ou até demissão, dependendo da gravidade da violação.</p>
+        </div>
+        <div class="modal-footer">
+          <button id="btnSair" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/SignUp/index.js"></script>
+</body>
+</html>

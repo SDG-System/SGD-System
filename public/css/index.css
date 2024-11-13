@@ -1,0 +1,16 @@
+@media (max-width: 780px) {
+    .navbar-collapse {
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .navbar-collapse .btn {
+        margin: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+}

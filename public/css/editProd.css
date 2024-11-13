@@ -1,0 +1,105 @@
+  /* Estilos gerais */
+  body {
+    background-color: #f1f4f9;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #22d172;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+
+  /* Cartões de produto */
+  .card {
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
+  }
+
+  .card-body {
+    color: #333;
+  }
+
+  /* Texto do produto */
+  .card-title,
+  .card-text {
+    font-weight: 500;
+  }
+
+  /* Botões de ação */
+  .edit-button {
+    background-color: #3498db;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+
+  .edit-button:hover {
+    background-color: #2980b9;
+  }
+
+  .close-button {
+    background-color: #95a5a6;
+    border: none;
+    color: #fff;
+    display: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .close-button:hover {
+    background-color: #7f8c8d;
+  }
+
+  .save-button {
+    background-color: #22d172;
+    border: none;
+    color: #fff;
+    display: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .save-button:hover {
+    background-color: #22d172;
+  }
+
+  /* Modais */
+  .modal-header,
+  .modal-footer {
+    border: none;
+  }
+
+  .modal-content {
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .modal-title {
+    font-weight: bold;
+  }
+
+  /* Modal de Sucesso */
+  #successModal .modal-title {
+    color: #2ecc71;
+  }
+
+  /* Modal de Erro */
+  #errorModal .modal-title {
+    color: #e74c3c;
+  }
+
+  .btn-primary,
+  .btn-danger {
+    transition: background-color 0.3s ease;
+  }

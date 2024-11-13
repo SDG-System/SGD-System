@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pesquisa de Produtos</title>
+    <!-- Incluindo o favicon e o logo com caminhos absolutos -->
+    <link rel="icon" href="/imagens/favicon.ico" />
+    <link rel="icon" href="/imagens/Logotipo.png" />
+    <link rel="stylesheet" href="/css/principal.css" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+    <link rel="stylesheet" href="/css/listagemProd.css" />
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/sidebar') %>
+    <div class="content">
+      <h1>Pesquisar Produtos</h1>
+      <div>
+        <form id="searchForm" action="/listagem-produtos/search" method="get" class="text-center">
+          <input type="text" name="query" placeholder="Pesquisar">
+          <button type="submit"><i class="bi bi-search"></i> Buscar</button>
+        </form>
+
+        <!-- Parte do corpo HTML para exibir o formulário de edição dos produtos -->
+        <div class="row">
+          <% produtos.forEach(produto => { %>
+            <div class="col-md-4">
+              <div class="card mb-4 <% if (produto.qt_produto < 5) { %>card-vermelho<% } %>">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Código:
+                    <span class="editable" data-field="produto" data-id="<%= produto.cd_produto %>">
+                      <%= produto.cd_produto %>
+                    </span>
+                  </h5>
+                  <p class="card-text">Descrição:
+                    <span class="editable" data-field="descricaoProduto" data-id="<%= produto.ds_produto %>">
+                      <%= produto.ds_produto %>
+                    </span>
+                  </p>
+                  <p class="card-text">Preço: R$
+                    <span class="editable" data-field="precoProduto" data-id="<%= produto.vl_produto %>">
+                      <%= produto.vl_produto %>
+                    </span>
+                  </p>
+                  <p class="card-text">Quantidade:
+                    <span class="editable" data-field="quantidadeProduto" data-id="<%= produto.qt_produto %>">
+                      <%= produto.qt_produto %>
+                    </span>
+                  </p>
+                  <input type="hidden" name="idProduto" value="<%= produto.cd_produto %>">
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+    <script src="/js/Logout/index.js"></script>
+    <script src="/js/Sidebar/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configurações</title>
+    <link rel="stylesheet" href="/css/principal.css" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/sidebar') %>
+  <div class="content" style="margin-left: 250px; padding: 20px;">
+    <div class="titulo">
+    </div>
+    <div class="col-md-12 central text-center">
+      <div class="card-body text-center" style="border: 2px solid black; border-radius: 20px;">
+        <div class="central">
+          <form class="product-form" enctype="multipart/form-data">
+            <div class="form-group text-center">
+              <div id="iconContainer" style="margin-bottom: 10px;">
+                <i class="bi bi-person-circle" id="userIcon" style="font-size: 80px; color: #6c757d;"></i>
+                <input type="file" class="form-control-file text-center" id="uploadFoto" accept="image/*" />
+                <img id="preview" src="#" alt="Preview da Imagem"
+                  style="display: none; margin-top: 10px; max-width: 100px; height: auto; border-radius: 50%;" />
+              </div>
+            </div>
+            <h5>Funcionário</h5>
+            <h5 class="card-title text-center">
+              ID: <%= settings.cd_funcionario %>
+            </h5>
+            <p class="card-title">
+              Nome: <span class="editable" data-field="nomeFunc" data-id="<%= settings.nm_funcionario %>">
+                <%= settings.nm_funcionario %>
+              </span>
+            </p>
+            <p class="card-title">
+              E-mail: <span class="editable" data-field="email" data-id="<%= settings.nm_email %>">
+                <%= settings.nm_email %>
+              </span>
+            </p>
+            <p class="card-title">
+              Status: <span class="editable" data-field="status" data-id="<%= settings.st_usuario %>"><span
+                  class="badge badge-success">Ativo</span>
+            </p>
+            <p class="card-title"><span class="editable" data-field="tipoFunc"
+                data-id="<%= settings.id_tipo_funcionario %>">Administrador</span>
+            </p>
+            <button type="button" class="btn btn-primary edit-button"><i class="bi bi-pencil"
+                title="Editar"></i></button>
+            <button type="button" class="btn btn-secondary close-button" style="display:none;"><i class="bi bi-x-circle"
+                title="Fechar"></i></button>
+            <button type="submit" class="btn btn-success save-button" style="display:none;"><i class="bi bi-save"
+                title="Salvar Edição"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Modal de Sucesso -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="successModalLabel">Edição Concluída</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            As informações do usuário foram alteradas com sucesso!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal de Erro -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="errorModalLabel">Erro ao Editar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Ocorreu um erro ao editar as informações do usuário. Por favor, tente novamente.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script src="/js/Logout/index.js"></script>
+  <script src="/js/Settings/index.js"></script>
+  <script src="/js/Sidebar/index.js"></script>
+</body>

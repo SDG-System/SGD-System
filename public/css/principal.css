@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 250px;
+  background-color: #22d172 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.menus {
+  position: absolute;
+  left: 0;
+  top: 150px;
+  bottom: 0;
+  width: 200px;
+  overflow-y: hidden;
+}
+
+.item-menu {
+  list-style: none;
+  text-decoration: none;
+  text-align: left;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.item-menu a {  
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.item-menu a:hover {
+  background-color: #1bac5c;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar .btn {
+  background-color: #42f36b; /* Cor verde escuro */
+  color: white;
+  border: none;
+  width: 50%; 
+}
+.sidebar .btn:hover {
+  background-color: #42f36b; /* Cor verde escuro mais intenso para hover */
+}
+
+.titulo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.dashboards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dashboards .graficos-inicial {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 340px;
+}
+
+.botoes-categoria {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.botoes-categoria .botoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 10px 0;
+}
+
+h1 {
+  font-style: italic;
+  font-size: 40px;
+}
+
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+/* Centralizando o conteúdo */
+.menu-lateral {
+  display: flex;
+  align-items: center;
+}
+
+.menu-botao img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Ajusta o botão Logout para o rodapé da sidebar */
+.menu-botao-logout {
+  margin-bottom: 20px;
+}
+
+/* Estilos adicionais */
+.menu {
+  flex: 1;
+  flex-direction: column;
+}
+
+.menu-lateral {
+  flex-grow: 1;
+}
+
+/* Centralizando o submenu */
+.dropdown-menu {
+  background-color: #22d172 !important;
+  color: white;
+  text-align: center;
+}
+
+/* Centralizando os itens do dropdown */
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Cor dos itens do submenu ao passar o mouse */
+.dropdown-item:hover {
+  background-color: #22d172;
+  color: white;
+}
+
+/* Estilo dos ícones nos menus */
+.item-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.item-menu a .bi {
+  margin-right: 8px;
+}
+

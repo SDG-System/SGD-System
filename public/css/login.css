@@ -1,0 +1,23 @@
+.modal-header,
+.modal-footer {
+  border: none;
+}
+
+.modal-content {
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+/* Modal de Sucesso */
+#successModal .modal-title {
+  color: #2ecc71;
+}
+
+/* Modal de Erro */
+#errorModal .modal-title {
+  color: #e74c3c;
+}

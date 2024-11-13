@@ -1,0 +1,51 @@
+.main .row img {
+    width: 80%;
+    height: auto;
+}
+
+/* Estilo para o contêiner do carrossel */
+.carousel-container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #22d172 !important;
+    padding: 1rem;
+    position: static;
+}
+
+.carousel-item img {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px; /* Ajusta a imagem mais para cima */
+}
+
+.carousel-item h5, .carousel-item p{
+    color: white;
+    padding: 1rem;
+    width: 60%;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 0;
+    }
+
+    .carousel-item h5, .carousel-item p{
+        width: 100%;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        position: relative;
+        top: 40%;
+        transform: translateY(-30%);
+        width: 5%;
+    }
+
+
+
+}

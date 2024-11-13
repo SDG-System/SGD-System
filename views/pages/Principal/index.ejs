@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/principal.css" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+    <%- include('../partials/head') %>
+    <script src="/js/Dashboards/index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <%- include('../partials/sidebar') %>
+  <div class="content" style="margin-left: 250px; padding: 20px">
+    <div class="titulo">
+    </div>
+
+    <div class="botoes-categoria">
+      <div class="botoes">
+
+        <button class="btn btn-primary" title="Produtos"><i class="bi bi-cart"></i> Produtos</button>
+
+        <button class="btn btn-primary" title="Entrada"><i class="bi bi-door-open"></i> Entrada</button>
+
+        <button class="btn btn-primary" title="Saída"><i class="bi bi-box-arrow-left"></i> Saída</button>
+
+        <button class="btn btn-primary" title="Estoque"><i class="bi bi-box"></i> Estoque</button>
+
+      </div>
+    </div>
+    <div class="dashboards">
+      <div class="graficos-inicial">
+        <canvas class="grafico" id="grafico"></canvas>
+      </div>
+      <div class="graficos-inicial">
+        <canvas class="grafico" id="graficoDois"></canvas>
+      </div>
+      <div class="graficos-inicial">
+        <canvas class="grafico" id="graficoTres"></canvas>
+      </div>
+    </div>
+
+    <!-- <canvas id="graficos" style="width:100%;max-width:600px;height:200px" ></canvas> -->
+    <script src="/js/Logout/index.js"></script>
+    <script src="/js/Principal/index.js"></script>
+    <script src="/js/Sidebar/index.js"></script>
+</body>
+</html>

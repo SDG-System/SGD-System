@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Produtos</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="/css/principal.css" />
+  <link rel="stylesheet" href="/css/sidebar.css" />
+  <link rel="stylesheet" href="/css/cadProd.css" />
+  <%- include('../partials/head') %>
+</head>
+<style>
+  body {
+      background-color: #f1f4f9;
+      color: #333;
+      font-family: Arial, sans-serif;
+}
+</style>
+<body>
+  <%- include('../partials/sidebar') %>
+  <div class="content">
+    <h1>Cadastro de Produtos</h1>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <form method="post" autocomplete="off" action="/cadastrar-produtos">
+                <div class="form-group">
+                  <input type="text" id="idProduto" name="idProduto" placeholder="Código do Produto" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="produto" name="produto" placeholder="Produto" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="descricaoProduto" name="descricaoProduto" placeholder="Descrição" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="precoProduto" name="precoProduto" placeholder="Preço" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="quantidadeProduto" name="quantidadeProduto" placeholder="Quantidade" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="categoriaProduto" name="categoriaProduto" placeholder="Categoria" required>
+                </div>
+                <input type="hidden" id="cdFuncionario" name="cdFuncionario" value="">
+                <button type="submit" class="btn btn-dark btn-block">Cadastrar</button>
+                <button type="button" id="btn-limpar" class="btn btn-dark btn-block">Limpar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Confirmação de Cadastro -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="successModalLabel">Cadastro Concluído</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            O produto foi cadastrado com sucesso!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Erro -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="errorModalLabel">Erro ao Cadastrar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Ocorreu um erro ao cadastrar o produto. Por favor, tente novamente.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/CadastroProdutos/index.js"></script>
+  <script src="/js/Logout/index.js"></script>
+  <script src="/js/Sidebar/index.js"></script>
+</body>
+</html>

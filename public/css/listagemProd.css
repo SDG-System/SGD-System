@@ -1,0 +1,83 @@
+  /* Estilos adicionais */
+  .content {
+    margin-left: 250px;
+    padding: 40px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  #searchForm {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  #searchForm input[type="text"] {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+  }
+
+  #searchForm button {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    font-size: 1rem;
+  }
+
+  #searchForm button:hover {
+    background-color: #555;
+  }
+
+  /* Estilo dos cartões */
+  .card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card-vermelho {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .card-text {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0;
+  }
+
+  .editable {
+    font-weight: bold;
+    color: #333;
+  }

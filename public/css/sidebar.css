@@ -1,0 +1,63 @@
+.sidebar {
+  width: 250px;
+  transition: width 0.3s;
+  background-color: #f8f9fa;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar .logo img {
+  width: 170px;
+  transition: width 0.3s;
+}
+
+.sidebar.collapsed .logo img {
+  width: 80px;
+  margin-top: 10px;
+}
+
+.sidebar.collapsed .menu-text {
+  display: none;
+}
+
+.sidebar.collapsed .dropdown-item .menu-text {
+  display: inline-block;
+  font-size: 10px;
+  margin-left: 10px;
+}
+
+.sidebar.collapsed .dropdown-item i {
+  display: inline-block; /* Exibe apenas os ícones */
+  margin-right: 0; /* Remove margem à direita */
+}
+
+/* Ajuste para o botão de toggle à esquerda */
+.menu-toggle {
+  align-items: flex-start;
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  margin: 10px;
+  color: white;
+  left: 20px; /* Alinhado à esquerda */
+}
+
+.menu-botao.logo {
+  padding-top: 20px;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+.collapsed ~ .content {
+  margin-left: 80px;
+}
+
+.dropdown-menu {
+  padding: 0; /* Remove o espaçamento do dropdown */
+}
